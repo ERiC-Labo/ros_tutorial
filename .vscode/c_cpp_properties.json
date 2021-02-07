@@ -1,0 +1,32 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "/home/tsuchida/ros_package/arm_tutorial/devel/include",
+                "/home/tsuchida/ros_package/denso_ws/devel/include",
+                "/home/tsuchida/ros_package/ur_ws/devel/include",
+                "/home/tsuchida/ros_package/kinova_ws/devel/include",
+                "/home/tsuchida/ros_package/ros_ws/devel/include",
+                "/home/tsuchida/ros_package/catkin_ws/devel/include",
+                "/home/tsuchida/ros_package/gripper_ws/devel/include",
+                "/opt/ros/melodic/include",
+                "/home/tsuchida/ros_package/arm_tutorial/src/arm_tutorial/chapter01/Universal_Robots_ROS_Driver/controller_stopper/include",
+                "/home/tsuchida/ros_package/arm_tutorial/src/arm_tutorial/chapter01/Universal_Robots_ROS_Driver/ur_calibration/include",
+                "/home/tsuchida/ros_package/arm_tutorial/src/arm_tutorial/chapter01/Universal_Robots_ROS_Driver/ur_controllers/include",
+                "/home/tsuchida/ros_package/arm_tutorial/src/arm_tutorial/chapter01/fmauch_universal_robot/ur_kinematics/include",
+                "/home/tsuchida/ros_package/arm_tutorial/src/arm_tutorial/chapter01/Universal_Robots_ROS_Driver/ur_robot_driver/include",
+                "/usr/include"
+            ],
+            "name": "Linux",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu11",
+            "cppStandard": "gnu++14"
+        }
+    ],
+    "version": 4
+}

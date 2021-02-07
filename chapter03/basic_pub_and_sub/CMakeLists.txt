@@ -10,7 +10,7 @@ find_package(catkin REQUIRED COMPONENTS
 )
 
 catkin_package(
-  INCLUDE_DIRS include
+  #INCLUDE_DIRS include
 #  LIBRARIES basic_pub_and_sub
   CATKIN_DEPENDS roscpp rospy std_msgs
 #  DEPENDS system_lib
