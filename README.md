@@ -45,4 +45,4 @@ rosrun basic_pub_and_sub get_image_and_save.py
 ```
 roslanch basic_rviz express_urdf.launch
 ```
-<img src="img/image_1.png">
+<img src="chapter03/img/image_1.png">
