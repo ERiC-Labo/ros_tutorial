@@ -1,11 +1,11 @@
-## chapter03
-### basic_pub_and_sub
-#### Initially
+# chapter03
+## basic_pub_and_sub
+### Initially
 ```
 echo "source (your ros workspace folder)/devel/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 ```
-#### simple_pub simple_sub
+### simple_pub simple_sub
 ```
 roscore
 ```
@@ -17,7 +17,7 @@ rosrun basic_pub_and_sub simple_subscriber.py
 ```
 You can do message communication
 
-#### class type pub and sub
+### class type pub and sub
 ```
 roscore
 ```
@@ -29,7 +29,7 @@ rosrun basic_pub_and_sub class_subscriber.py
 ```
 You can show TwistStamp message and please look basic_pub_and_sub/file/twiststamp.txt
 
-#### Make color image publishesr and saving subscriber
+### Make color image publishesr and saving subscriber
 ```
 roscore
 ```
@@ -41,7 +41,7 @@ rosrun basic_pub_and_sub get_image_and_save.py
 ```
 
 
-### basic rviz
+## basic rviz
 ```
 roslanch basic_rviz express_urdf.launch
 ```
