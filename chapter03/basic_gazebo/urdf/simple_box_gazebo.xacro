@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="simple_box">
+    <xacro:macro name="box" params="suffix parent *origin">
+        <joint name="${suffix}_joint" type="fixed">
+            <parent link="${parent}"/>
+            <child link="${suffix}_link"/>
+            <xacro:insert_block name="origin"/>
+        </joint>
+        <link name="${suffix}_link">
+            <inertial>
+                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>      
+                <mass value="0.001"/>
+                <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+            </inertial>
+            <visual>
+                <geometry>
+                    <box size="0.3 0.3 0.3"/>
+                </geometry>
+                <material name="Cyan">
+                    <color rgba="0 1.0 0 1.0"/>
+                  </material>
+            </visual>
+            <collision>
+                <geometry>
+                    <box size="0.3 0.3 0.3"/>
+                </geometry>
+            </collision>
+        </link>
+    </xacro:macro>
+    <link name="base_link"/>
+    <xacro:box parent="base_link" suffix="box1">
+        <origin xyz="0.0 1.0 0.0" rpy="0.0 0.0 0.0"/> 
+    </xacro:box>
+    <xacro:box parent="base_link" suffix="box2">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/> 
+    </xacro:box>
+    <xacro:box parent="base_link" suffix="box3">
+        <origin xyz="0.0 -1.0 0.0" rpy="0.0 0.0 0.0"/> 
+    </xacro:box>
+    <gazebo reference="box1_link">
+        <material>Gazebo/Green</material>
+    </gazebo>
+    <gazebo reference="box2_link">
+        <material>Gazebo/Green</material>
+    </gazebo>
+    <gazebo reference="box3_link">
+        <material>Gazebo/Green</material>
+    </gazebo>
+    
+</robot>

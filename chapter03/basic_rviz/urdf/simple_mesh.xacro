@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="HV8">
+    <xacro:macro name="HV8" params="parent suffix *origin">
+        <joint name="${suffix}_joint" type="fixed">
+            <parent link="${parent}"/>
+            <child link="HV8"/>
+            <xacro:insert_block name="origin"/>
+        </joint>
+        <link name="HV8">
+            <visual>
+                <geometry>
+                    <mesh filename="package://basic_rviz/mesh/stl/HV8.stl" scale="1.0"/>
+                </geometry>
+            </visual>
+        </link>
+    </xacro:macro>
+    <xacro:HV8 parent="base_link" suffix="1">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    </xacro:HV8>
+</robot>

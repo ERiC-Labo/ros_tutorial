@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="box">
+    <xacro:macro name="box_1" params="*origin parent *color material suffix">
+        <joint name="${suffix}_joint" type="fixed">
+            <parent link="${parent}"/>
+            <child link="${suffix}_link"/>
+            <xacro:insert_block name="origin"/>
+        </joint>
+        <link name="${suffix}_link">
+            <visual>
+                <geometry>
+                    <box size="0.3 0.3 0.3"/>
+                </geometry>
+                <material name="${material}">
+                    <xacro:insert_block name="color"/>
+                </material>
+            </visual>
+        </link>
+    </xacro:macro>
+    <link name="base_link">
+    </link>
+    <xacro:box_1 parent="base_link" material="blue" suffix="box1">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <color rgba="0.0 0.0 1.0 1.0"/>
+    </xacro:box_1>
+   
+    <xacro:box_1 parent="base_link" material="green" suffix="box2">
+        <origin xyz="0.5 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <color rgba="0.0 1.0 0.0 1.0"/>
+    </xacro:box_1>
+
+    <xacro:box_1 parent="base_link" material="green" suffix="box3">
+        <origin xyz="-0.5 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <color rgba="0.0 1.0 0.0 1.0"/>
+    </xacro:box_1>
+
+    <xacro:box_1 parent="base_link" material="red" suffix="box4">
+        <origin xyz="0.0 0.5 0.0" rpy="0.0 0.0 0.0"/>
+        <color rgba="1.0 0.0 0.0 1.0"/>
+    </xacro:box_1>
+
+    <xacro:box_1 parent="base_link" material="red" suffix="box5">
+        <origin xyz="0.0 -0.5 0.0" rpy="0.0 0.0 0.0"/>
+        <color rgba="1.0 0.0 0.0 1.0"/>
+    </xacro:box_1>
+</robot>
