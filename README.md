@@ -18,4 +18,4 @@ rosrun arm_moveit get_joint_information.py
 rosrun arm_moveit keybord_move.py
 ```
 <div align="center">
-<img src="chapter04/img/output.gif" width="500" height="300">
+<img src="chapter04/img/output.gif" width="900" height="300">
