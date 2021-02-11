@@ -4,12 +4,12 @@
 roslaunch arm_moveit ur3e_setup.launch
 ```
 <div align="center">
-<img src="chapter04/img/image_1.jpg" width="800" height="500">
+<img src="chapter04/img/image_1.jpg" width="400" height="300">
 </div>
 
 ```
 rosrun arm_moveit get_joint_information.py
 ```
 <div align="center">
-<img src="chapter04/img/image_2.jpg" width="800" height="500" center="true">
+<img src="chapter04/img/image_2.jpg" width="400" height="300">
 </div>
