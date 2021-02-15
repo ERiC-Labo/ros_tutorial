@@ -32,6 +32,11 @@ public:
         while (ros::ok())
         {
             ros_pointcloud.header.frame_id = frame_id;
+            for (int i = 0; i < ros_pointcloud.fields.size(); i++) {
+                std::cout << ros_pointcloud.fields[i].name << " ";
+            }
+            std::cout << std::endl;
+            
             pub.publish(ros_pointcloud);
             loop.sleep();
         }
@@ -70,6 +75,22 @@ public:
         return cp;
     }
 
+    static void cloud_transform(pcl::PointCloud<pcl::PointXYZ> &pointcloud, std::string src_frame, std::string child_frame)
+    {
+        tf::StampedTransform transform_1;
+        tf_.lookupTransform(src_frame, child_frame, ros::Time(0), transform_1);
+        pcl_ros::transformPointCloud(pointcloud, pointcloud, transform_1);
+    }
+
+    template <typename POINT>
+    static void cloud_transform(pcl::PointCloud<POINT> &pointcloud, std::string src_frame, std::string child_frame)
+    {
+        tf::StampedTransform transform_1;
+        tf_.lookupTransform(src_frame, child_frame, ros::Time(0), transform_1);
+        pcl_ros::transformPointCloud(pointcloud, pointcloud, transform_1);
+    
+    }
+
 
 
 private:
@@ -77,4 +98,5 @@ private:
     ros::NodeHandle nh;
     int loop_rate_num;
     std::string frame_id;
+    static tf::TransformListener tf_;
 };

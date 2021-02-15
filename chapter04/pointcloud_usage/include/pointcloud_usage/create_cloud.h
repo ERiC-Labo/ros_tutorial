@@ -8,6 +8,8 @@
 #include <pcl/segmentation/sac_segmentation.h>
 #include <pcl/kdtree/kdtree.h>
 #include <pcl/segmentation/extract_clusters.h>
+#include <pcl_ros/impl/transforms.hpp>
+
 
 
 class PointCloud_class
@@ -104,6 +106,11 @@ public:
         pcl::io::savePCDFile(pcd_savename, pointcloud);
     }
 
+    static void save_pcd_1(pcl::PointCloud<pcl::PointXYZI> &pointcloud, std::string pcd_savename)
+    {
+        pcl::io::savePCDFile(pcd_savename, pointcloud);
+    }
+
     template <typename POINT>
     static void save_pcd(pcl::PointCloud<POINT> &pointcloud, std::string pcd_savename)
     {
@@ -158,5 +165,47 @@ public:
         segmentation.setInputCloud(pointcloud.makeShared());
         segmentation.segment(*inliers, coefficient);
     }
+
+    template <typename POINT>
+    static void segment(pcl::PointIndices::Ptr inliers, pcl::PointCloud<POINT> &pointcloud, pcl::ModelCoefficients &coefficient)
+    {
+        pcl::SACSegmentation<POINT> segmentation;
+        segmentation.setModelType(pcl::SACMODEL_PLANE);
+        segmentation.setMethodType(pcl::SAC_RANSAC);
+        segmentation.setMaxIterations(1000);
+        segmentation.setDistanceThreshold(0.005);
+        segmentation.setInputCloud(pointcloud.makeShared());
+        segmentation.segment(*inliers, coefficient);
+    }
+
+    static void extract(pcl::PointIndices::Ptr inliers, pcl::PointCloud<pcl::PointXYZ> &pointcloud, 
+                        pcl::PointCloud<pcl::PointXYZ> &segment_cloud, pcl::PointCloud<pcl::PointXYZ> &without_segment)
+    {
+        pcl::ExtractIndices<pcl::PointXYZ> extract;
+        extract.setInputCloud(pointcloud.makeShared());
+        extract.setIndices(inliers);
+        extract.setNegative(false);
+        extract.filter(segment_cloud);
+        extract.setNegative(true);
+        extract.filter(without_segment);
+    }
+
+    template <typename POINT>
+    static void extract(pcl::PointIndices::Ptr inliers, pcl::PointCloud<POINT> &pointcloud, 
+                        pcl::PointCloud<POINT> &segment_cloud, pcl::PointCloud<POINT> &without_segment)
+    {
+        pcl::ExtractIndices<POINT> extract;
+        extract.setInputCloud(pointcloud.makeShared());
+        extract.setIndices(inliers);
+        extract.setNegative(false);
+        extract.filter(segment_cloud);
+        extract.setNegative(true);
+        extract.filter(without_segment);
+    }
+
+    
+
+
+
   
 };

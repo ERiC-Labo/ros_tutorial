@@ -13,7 +13,7 @@ int main(int argc, char** argv)
     pnh.getParam("output_topic_name", output_topic_name);
     pnh.getParam("parent_link", parent_link);
     Point_and_ROS po_r(10, parent_link);
-    pcl::PointCloud<pcl::PointXYZ> load_cloud;
+    pcl::PointCloud<pcl::PointXYZRGB> load_cloud;
     sensor_msgs::PointCloud2 load_ros;
     PointCloud_class::load_pcd(load_cloud, load_file_name);
     Point_and_ROS::convert_1_to_2(load_cloud, load_ros);
