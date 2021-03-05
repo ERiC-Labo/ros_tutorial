@@ -2,9 +2,9 @@
 <launch>
 
     <node name="cloud_express" pkg="pointcloud_usage" type="cloud_express"  output="screen" respawn="false" respawn_delay="0">
-        <param name="load_file_name" value="/home/tsuchidashinya/yes_1.pcd"/>
+        <param name="load_file_name" value="/home/tsuchidashinya/random.pcd"/>
         <param name="output_topic_name" value="shinya_2"/>
-        <param name="parent_link" value="photoneo_center_optical_frame"/>
+        <param name="parent_link" value="world"/>
     </node>
 
 </launch>

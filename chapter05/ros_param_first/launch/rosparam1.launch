@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<launch>
+
+    <node name="node1" pkg="ros_param_first" type="param_display"  output="screen">
+        <param name="int_param" value="1"/>
+    </node>
+    <param name="node2/int_param" value="2"/>
+    <node name="node2" pkg="ros_param_first" type="param_display" output="screen"/>
+    <rosparam command="load" file="$(find ros_param_first)/config/param1_config.yaml"/>
+    <node name="node3" pkg="ros_param_first" type="param_display" output="screen"/>
+    
+    <rosparam>
+        node4:
+            int_param: 4
+    </rosparam>
+    <node name="node4" pkg="ros_param_first" type="param_display" output="screen"/>
+    
+    
+
+</launch>

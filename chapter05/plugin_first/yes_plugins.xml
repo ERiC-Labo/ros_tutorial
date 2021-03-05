@@ -1,0 +1,19 @@
+<library path="lib/libplugin_first">
+    <class name="plugin_first/yes_sum" type="yes_sum::sum_nikaidou" 
+     base_class_type="yes_base::nikaidou">
+        <description>Sum plugin</description>
+    </class>
+    <class name="plugin_first/yes_average" type="yes_average::average_nikaidou"
+        base_class_type="yes_base::nikaidou">
+    <description>Ave plugin</description>
+    </class>
+    <class name="plugin_first/yes_max" type="yes_max::max_nikaidou"
+        base_class_type="yes_base::nikaidou">
+        <description>Max plugin</description>
+    </class>
+    <class name="plugin_first/yes_min" type="yes_min::min_nikaidou"
+        base_class_type="yes_base::nikaidou">
+        <description>Min plugin</description>
+    </class>
+
+</library>
