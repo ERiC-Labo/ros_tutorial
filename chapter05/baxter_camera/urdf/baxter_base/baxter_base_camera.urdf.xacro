@@ -31,14 +31,14 @@
     </inertial>
   </link>
 
-  <!--link name="RGBD_camera">
+  <link name="RGBD_camera">
     <visual>
        <origin xyz="0.0 0.0 0" rpy="0.0 0.0 0.0"/>
        <geometry>
          <box size="0.15 0.15 0.15"/>
        </geometry>
     </visual>
-  </link-->
+  </link>
  
 
   <link name="left_torso_itb">
@@ -217,11 +217,11 @@
     <child link="torso"/>
     <limit effort="50000" lower="-3.01" upper="3.01" velocity="10000"/>
   </joint>
-  <!--joint name="RGBD_camera_joint" type="fixed">
+  <joint name="RGBD_camera_joint" type="fixed">
     <origin rpy="0 ${pi/9} 0" xyz="0.06 0 0.96"/>
     <parent link="torso"/>
     <child link="RGBD_camera"/>
-  </joint-->
+  </joint>
   <joint name="left_torso_itb_fixed" type="fixed">
     <origin rpy="-1.57079632679 3.1415 0" xyz="-0.08897 0.15593 0.389125"/>
     <parent link="torso"/>
