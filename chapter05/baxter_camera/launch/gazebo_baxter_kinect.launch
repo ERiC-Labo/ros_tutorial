@@ -3,7 +3,7 @@
     
     <arg name="model" default="$(find baxter_camera)/urdf/baxter_kinect.urdf.xacro"/>
     <arg name="rvizconfig" default="$(find baxter_camera)/rviz/basic_1.rviz"/>
-    <param name="robot_description" command="$(find xacro)/xacro  $(arg model)"/>
+    <param name="robot_description" command="$(find xacro)/xacro --inorder $(arg model)"/>
     <include file="$(find gazebo_ros)/launch/empty_world.launch"/>
     <node name="gazebo_box" pkg="gazebo_ros" type="spawn_model" respawn="false" args="-urdf -z 0.93 -model baxter -param robot_description
     -J baxter::right_s0 -0.272659
