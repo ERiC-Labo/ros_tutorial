@@ -27,6 +27,13 @@
     </inertial>
   </link>
 
+
+
+
+
+
+
+
   <link name="kinect">
     <inertial>
       <origin rpy="0 0 0" xyz="0.000000 0.000000 0.000000"/>
@@ -50,6 +57,13 @@
     </collision>
   </link>
  
+
+<!-- You can change -->
+
+
+
+
+
 
   <link name="left_torso_itb">
     <inertial>
@@ -227,6 +241,13 @@
     <child link="torso"/>
     <limit effort="50000" lower="-3.01" upper="3.01" velocity="10000"/>
   </joint>
+
+
+
+
+<!-- You can Change    -->
+
+
   <joint name="kinect_joint" type="fixed">
     <origin rpy="${3*pi/4} ${3*pi/18} 0" xyz="0.09 0 0.88"/>
     <parent link="torso"/>
@@ -237,6 +258,16 @@
     <parent link="torso"/>
     <child link="left_torso_itb"/>
   </joint>
+
+
+
+
+
+
+
+
+
+
   <joint name="right_torso_itb_fixed" type="fixed">
     <origin rpy="1.57079632679 0 0" xyz="-0.08897 -0.15593 0.389125"/>
     <parent link="torso"/>
