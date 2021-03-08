@@ -3,7 +3,7 @@
 <!-- |                                                                                            | -->
 <!-- |    baxter.urdf is DEPRECATED. It is included here for backward compatibility.              | -->
 <!-- |    Please use baxter.urdf.xacro by running:                                                | -->
-<!-- |$ rosrun xacro xacro.py - -inorder `rospack find baxter_description`/urdf/baxter.urdf.xacro | -->
+<!-- |$ rosrun xacro xacro.py - -inorder `rospack find baxter_camera`/urdf/baxter.urdf.xacro | -->
 <!-- |                                                                                            | -->
 <!-- ============================================================================================== -->
 <robot name="baxter">
@@ -14,13 +14,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://baxter_description/meshes/torso/base_link.DAE"/>
+        <mesh filename="package://baxter_camera/meshes/torso/base_link.DAE"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://baxter_description/meshes/torso/base_link_collision.DAE"/>
+        <mesh filename="package://baxter_camera/meshes/torso/base_link_collision.DAE"/>
       </geometry>
     </collision>
     <inertial>
@@ -47,7 +47,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://baxter_description/meshes/base/PEDESTAL.DAE"/>
+        <mesh filename="package://baxter_camera/meshes/base/PEDESTAL.DAE"/>
       </geometry>
       <material name="darkgray">
         <color rgba=".2 .2 .2 1"/>
@@ -56,7 +56,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://baxter_description/meshes/base/pedestal_link_collision.DAE"/>
+        <mesh filename="package://baxter_camera/meshes/base/pedestal_link_collision.DAE"/>
       </geometry>
     </collision>
     <inertial>
@@ -69,7 +69,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 .00953"/>
       <geometry>
-        <mesh filename="package://baxter_description/meshes/head/H0.DAE"/>
+        <mesh filename="package://baxter_camera/meshes/head/H0.DAE"/>
       </geometry>
       <material name="darkgray">
         <color rgba=".2 .2 .2 1"/>
@@ -113,7 +113,7 @@
     <visual>
       <origin rpy="0 -1.57079632679 0" xyz="0 -.00953 -.0347"/>
       <geometry>
-        <mesh filename="package://baxter_description/meshes/head/H1.DAE"/>
+        <mesh filename="package://baxter_camera/meshes/head/H1.DAE"/>
       </geometry>
       <material name="darkred">
         <color rgba=".5 .1 .1 1"/>
@@ -284,7 +284,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://baxter_description/meshes/upper_shoulder/S0.DAE"/>
+        <mesh filename="package://baxter_camera/meshes/upper_shoulder/S0.DAE"/>
       </geometry>
       <material name="darkred">
         <color rgba=".5 .1 .1 1"/>
@@ -307,7 +307,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://baxter_description/meshes/lower_shoulder/S1.DAE"/>
+        <mesh filename="package://baxter_camera/meshes/lower_shoulder/S1.DAE"/>
       </geometry>
       <material name="darkred">
         <color rgba=".5 .1 .1 1"/>
@@ -330,7 +330,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://baxter_description/meshes/upper_elbow/E0.DAE"/>
+        <mesh filename="package://baxter_camera/meshes/upper_elbow/E0.DAE"/>
       </geometry>
       <material name="darkred">
         <color rgba=".5 .1 .1 1"/>
@@ -367,7 +367,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://baxter_description/meshes/lower_elbow/E1.DAE"/>
+        <mesh filename="package://baxter_camera/meshes/lower_elbow/E1.DAE"/>
       </geometry>
       <material name="darkred">
         <color rgba=".5 .1 .1 1"/>
@@ -390,7 +390,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://baxter_description/meshes/upper_forearm/W0.DAE"/>
+        <mesh filename="package://baxter_camera/meshes/upper_forearm/W0.DAE"/>
       </geometry>
       <material name="darkred">
         <color rgba=".5 .1 .1 1"/>
@@ -435,7 +435,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://baxter_description/meshes/lower_forearm/W1.DAE"/>
+        <mesh filename="package://baxter_camera/meshes/lower_forearm/W1.DAE"/>
       </geometry>
       <material name="darkred">
         <color rgba=".5 .1 .1 1"/>
@@ -458,7 +458,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://baxter_description/meshes/wrist/W2.DAE"/>
+        <mesh filename="package://baxter_camera/meshes/wrist/W2.DAE"/>
       </geometry>
       <material name="lightgrey">
         <color rgba=".1 .1 .1 1"/>
@@ -713,7 +713,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://baxter_description/meshes/upper_shoulder/S0.DAE"/>
+        <mesh filename="package://baxter_camera/meshes/upper_shoulder/S0.DAE"/>
       </geometry>
       <material name="darkred">
         <color rgba=".5 .1 .1 1"/>
@@ -736,7 +736,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://baxter_description/meshes/lower_shoulder/S1.DAE"/>
+        <mesh filename="package://baxter_camera/meshes/lower_shoulder/S1.DAE"/>
       </geometry>
       <material name="darkred">
         <color rgba=".5 .1 .1 1"/>
@@ -759,7 +759,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://baxter_description/meshes/upper_elbow/E0.DAE"/>
+        <mesh filename="package://baxter_camera/meshes/upper_elbow/E0.DAE"/>
       </geometry>
       <material name="darkred">
         <color rgba=".5 .1 .1 1"/>
@@ -796,7 +796,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://baxter_description/meshes/lower_elbow/E1.DAE"/>
+        <mesh filename="package://baxter_camera/meshes/lower_elbow/E1.DAE"/>
       </geometry>
       <material name="darkred">
         <color rgba=".5 .1 .1 1"/>
@@ -819,7 +819,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://baxter_description/meshes/upper_forearm/W0.DAE"/>
+        <mesh filename="package://baxter_camera/meshes/upper_forearm/W0.DAE"/>
       </geometry>
       <material name="darkred">
         <color rgba=".5 .1 .1 1"/>
@@ -864,7 +864,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://baxter_description/meshes/lower_forearm/W1.DAE"/>
+        <mesh filename="package://baxter_camera/meshes/lower_forearm/W1.DAE"/>
       </geometry>
       <material name="darkred">
         <color rgba=".5 .1 .1 1"/>
@@ -887,7 +887,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://baxter_description/meshes/wrist/W2.DAE"/>
+        <mesh filename="package://baxter_camera/meshes/wrist/W2.DAE"/>
       </geometry>
       <material name="lightgrey">
         <color rgba=".1 .1 .1 1"/>

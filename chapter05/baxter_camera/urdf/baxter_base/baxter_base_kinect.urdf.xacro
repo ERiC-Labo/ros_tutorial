@@ -1,10 +1,6 @@
 <?xml version="1.0" ?>
 <robot name="baxter" xmlns:xacro="http://www.ros.org/wiki/xacro">
-  <xacro:arg name="gazebo" default="false"/>
-  <xacro:if value="$(arg gazebo)">
-    <!-- Gazebo Tags -->
-    <xacro:include filename="$(find baxter_camera)/urdf/baxter_base/baxter_base.gazebo.xacro" />
-  </xacro:if>
+  
   <link name="base">
   </link>
   
@@ -32,15 +28,26 @@
   </link>
 
   <link name="kinect">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.000000 0.000000 0.000000"/>
+      <mass value="0.0001"/>
+      <inertia ixx="1e-08" ixy="0" ixz="0" iyy="1e-08" iyz="0" izz="1e-08"/>
+    </inertial>
     <visual>
         <material name="black">
             <color rgba="0.1 0.1 0.1 1.0"/>
         </material>
-       <origin xyz="0.0 0.0 0" rpy="0.0 0.0 0.0"/>
+       <origin xyz="0.0 0.0 0" rpy="0.0 ${-pi/4} 0.0"/>
        <geometry>
          <mesh filename="package://baxter_camera/meshes/kinectv2/kinectv2.stl"/>
        </geometry>
     </visual>
+    <collision>
+      <origin rpy="0 ${-pi/4} 0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://baxter_camera/meshes/kinectv2/kinectv2.stl"/>
+      </geometry>
+    </collision>
   </link>
  
 
@@ -221,7 +228,7 @@
     <limit effort="50000" lower="-3.01" upper="3.01" velocity="10000"/>
   </joint>
   <joint name="kinect_joint" type="fixed">
-    <origin rpy="0 ${pi/9} 0" xyz="0.09 0 0.88"/>
+    <origin rpy="${3*pi/4} ${3*pi/18} 0" xyz="0.09 0 0.88"/>
     <parent link="torso"/>
     <child link="kinect"/>
   </joint>
