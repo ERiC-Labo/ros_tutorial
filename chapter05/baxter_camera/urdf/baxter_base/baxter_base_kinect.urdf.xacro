@@ -253,21 +253,20 @@
     <parent link="torso"/>
     <child link="kinect"/>
   </joint>
+
+
+
+
+
+
+
+
+
   <joint name="left_torso_itb_fixed" type="fixed">
     <origin rpy="-1.57079632679 3.1415 0" xyz="-0.08897 0.15593 0.389125"/>
     <parent link="torso"/>
     <child link="left_torso_itb"/>
   </joint>
-
-
-
-
-
-
-
-
-
-
   <joint name="right_torso_itb_fixed" type="fixed">
     <origin rpy="1.57079632679 0 0" xyz="-0.08897 -0.15593 0.389125"/>
     <parent link="torso"/>
