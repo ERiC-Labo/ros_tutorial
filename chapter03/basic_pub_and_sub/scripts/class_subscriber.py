@@ -6,7 +6,7 @@ import random
 class Class_Subscriber:
     def __init__(self, topic_name):
         self.sub = rospy.Subscriber(topic_name, TwistStamped, self.sub_callback)
-        self.f = open('/home/tsuchidashinya/twiststamp.txt', 'w')
+        self.f = open('/home/ericlab/twiststamp.txt', 'w')
 
     def sub_callback(self, msg):
         self.f.write(str(msg) + '\n')

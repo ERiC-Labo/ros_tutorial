@@ -36,6 +36,7 @@ private:
         pcl::SACSegmentation<pcl::PointXYZ> segmentation;
 
         segmentation.setModelType(pcl::SACMODEL_PLANE);
+      
         segmentation.setMethodType(pcl::SAC_RANSAC);
         segmentation.setMaxIterations(1000);
         segmentation.setDistanceThreshold(0.01);

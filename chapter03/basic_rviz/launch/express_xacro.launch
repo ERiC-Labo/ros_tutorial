@@ -1,10 +1,13 @@
 <?xml version="1.0"?>
 <launch>
-
+    <arg name="right_electric_gripper" default="true"/>
+    <arg name="left_electric_gripper" default="true"/>
     <arg name="model" default="$(find basic_rviz)/urdf/simple_box.xacro"/>
     <arg name="rvizconfig" default="$(find basic_rviz)/rviz/basic_1.rviz"/>
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
-    <param name="robot_description" command="$(find xacro)/xacro $(arg model)"/>
+    <param name="robot_description" command="$(find xacro)/xacro --inorder $(arg model) 
+                                            left_electric_gripper:=$(arg left_electric_gripper)
+                                            right_electric_gripper:=$(arg right_electric_gripper)"/>
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true"/>
     
     
