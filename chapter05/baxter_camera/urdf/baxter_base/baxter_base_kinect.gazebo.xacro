@@ -95,7 +95,7 @@
         <pointCloudTopicName>points</pointCloudTopicName>
         <cameraInfoTopicName>camera_info</cameraInfoTopicName>
         <depthImageCameraInfoTopicName>camera_info</depthImageCameraInfoTopicName>
-        <frameName>kinect</frameName>
+        <frameName>kinect_optical_frame</frameName>
         <baseline>0.1</baseline>
         <distortion_k1>-0.11862627596824302</distortion_k1>
           <distortion_k2>0.1330449495758574</distortion_k2>
