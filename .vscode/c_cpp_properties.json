@@ -6,7 +6,10 @@
                 "/opt/ros/noetic/include",
                 "/usr/include/pcl-1.10",
                 "/usr/include/eigen3",
-                "${workspaceFolder}/chapter04/pointcloud_usage/include"
+                "${workspaceFolder}/chapter04/pointcloud_usage/include",
+                "/home/tsuchidashinya/ros_package/arm_tutorial/devel/include",
+                "/home/tsuchidashinya/ros_package/arm_tutorial/src/arm_tutorial/chapter05/plugin_first/include/",
+                "/home/tsuchidashinya/ros_package/arm_tutorial/src/arm_tutorial/chapter05/client_yes_plugin/include/"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",

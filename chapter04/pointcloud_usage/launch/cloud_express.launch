@@ -2,9 +2,13 @@
 <launch>
 
     <node name="cloud_express" pkg="pointcloud_usage" type="cloud_express"  output="screen" respawn="false" respawn_delay="0">
+<<<<<<< HEAD
         <param name="load_file_name" value="/home/ericlab/ros_package/denso_ws/src/denso_run/denso_pkgs/denso_common/denso_descriptions/object_description/meshes/PCD/NHV8.pcd"/>
+=======
+        <param name="load_file_name" value="/home/tsuchidashinya/random.pcd"/>
+>>>>>>> e3cb6da60cbfe40e00d6bc4d8a68e0a6c6254d9d
         <param name="output_topic_name" value="shinya_2"/>
-        <param name="parent_link" value="photoneo_center_optical_frame"/>
+        <param name="parent_link" value="world"/>
     </node>
 
 </launch>
