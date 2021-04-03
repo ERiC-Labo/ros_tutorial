@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<launch>
+    
+    <arg name="model" default="$(find baxter_camera)/urdf/baxter_kinect.urdf.xacro"/>
+    <arg name="rvizconfig" default="$(find baxter_camera)/rviz/basic_1.rviz"/>
+    <param name="robot_description" command="$(find xacro)/xacro --inorder $(arg model)"/>
+    <include file="$(find gazebo_ros)/launch/empty_world.launch"/>
+    <node name="gazebo_box" pkg="gazebo_ros" type="spawn_model" respawn="false" args="-urdf -z 0.93 -model baxter -param robot_description
+    -J baxter::right_s0 -0.272659
+    -J baxter::right_s1 1.04701
+    -J baxter::right_e0 -0.00123203
+    -J baxter::right_e1 0.49262
+    -J baxter::right_w0 -0.0806423
+    -J baxter::right_w1 -0.0620532
+    -J baxter::right_w2 0.0265941
+    -J baxter::left_s0 0.192483
+    -J baxter::left_s1 1.047
+    -J baxter::left_e0 0.000806359
+    -J baxter::left_e1 0.491094
+    -J baxter::left_w0 -0.178079
+    -J baxter::left_w1 -0.0610333
+    -J baxter::left_w2 -0.0124707">
+    </node>
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+        <param name="/use_gui" value="True"/>
+    </node>
+    
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" output="screen"/>
+
+
+</launch>

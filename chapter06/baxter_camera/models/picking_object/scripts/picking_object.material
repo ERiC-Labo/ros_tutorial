@@ -1,0 +1,13 @@
+material study_box/Diffuse
+{
+    technique
+    {
+        pass
+        {
+            texture_unit
+            {
+                texture uv_rayout_shinka.png
+            }
+        }
+    }
+}

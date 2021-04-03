@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<robot name="baxter" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:arg name="gazebo" default="true"/>
+  
+  <xacro:arg name="pedestal" default="true"/>
+  <!-- Baxter Base URDF -->
+  <xacro:include filename="$(find baxter_camera)/urdf/baxter_base/baxter_base_kinect.urdf.xacro">
+  </xacro:include>
+  <xacro:include filename="$(find baxter_camera)/urdf/baxter_base/baxter_base_kinect.gazebo.xacro"></xacro:include>
+
+  <link name="kinect_optical_frame"/>
+  <joint name="kinect_optical_joint" type="fixed">
+    <parent link="torso"/>
+    <child link="kinect_optical_frame"/>
+    <origin  xyz="0.15 0 0.88" rpy="${41*pi/30} 0 ${-pi/2}"/>
+  </joint>
+
+  <!-- Baxter Pedestal -->
+  <xacro:if value="$(arg pedestal)">
+    <xacro:include filename="$(find baxter_camera)/urdf/pedestal/pedestal.xacro">
+      <xacro:arg name="gazebo" value="${gazebo}"/>
+    </xacro:include>
+  </xacro:if>
+
+  <!-- Left End Effector -->
+  <xacro:include filename="$(find baxter_camera)/urdf/left_end_effector.urdf.xacro" />
+
+  <!-- Right End Effector -->
+  <xacro:include filename="$(find baxter_camera)/urdf/right_end_effector.urdf.xacro" />
+
+</robot>

@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<launch>
+    
+    <arg name="model" default="$(find baxter_camera)/urdf/baxter_kinect.urdf.xacro"/>
+    <arg name="rvizconfig" default="$(find baxter_camera)/rviz/basic_1.rviz"/>
+    <param name="robot_description" command="$(find xacro)/xacro --inorder $(arg model)"/>
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find baxter_camera)/world/picking_world.world"/>
+    </include>
+    <node pkg="tf2_ros" type="static_transform_publisher" name="base_to_world" args="0 0 0 0 0 0 1 world base" />
+
+    <node name="gazebo_box" pkg="gazebo_ros" type="spawn_model" respawn="false" args="-urdf -z 0.93 -model baxter -param robot_description
+    -J baxter::right_s0 -0.272659
+    -J baxter::right_s1 1.04701
+    -J baxter::right_e0 -0.00123203
+    -J baxter::right_e1 0.49262
+    -J baxter::right_w0 -0.0806423
+    -J baxter::right_w1 -0.0620532
+    -J baxter::right_w2 0.0265941
+    -J baxter::left_s0 0.192483
+    -J baxter::left_s1 1.047
+    -J baxter::left_e0 0.000806359
+    -J baxter::left_e1 0.491094
+    -J baxter::left_w0 -0.178079
+    -J baxter::left_w1 -0.0610333
+    -J baxter::left_w2 -0.0124707">
+    </node>
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+    <!--node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+        <param name="/use_gui" value="True"/>
+    </node-->
+
+    <rosparam file="$(find baxter_camera)/config/baxter_controllers.yaml" command="load"/>
+    <node name="baxter_controller_spawner" pkg="controller_manager" type="controller_manager" args="spawn right_controller left_controller right_hand left_hand" output="screen" respawn="false"/>
+    
+    <rosparam file="$(find baxter_camera)/config/joint_state_controller.yaml" command="load"/>
+    <node name="joint_spawner" pkg="controller_manager" type="controller_manager" args="spawn joint_state_controller" respawn="false" output="screen"/>
+   
+    <include file="$(find baxter_moveit)/launch/move_group.launch"/>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" output="screen"/>
+
+
+</launch>
