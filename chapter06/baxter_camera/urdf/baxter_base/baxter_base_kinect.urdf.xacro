@@ -17,7 +17,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://baxter_camera/meshes/torso/base_link_collision.DAE"/>
+        <mesh filename="package://baxter_camera/meshes/torso/base_link.STL"/>
       </geometry>
     </collision>
     <inertial>
@@ -88,7 +88,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0.0 0 0.0"/>
       <geometry>
-        <sphere radius="0.001"/>
+        <mesh filename="package://baxter_camera/meshes/head/H0.STL"/>
       </geometry>
     </collision>
     <inertial>
@@ -132,7 +132,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0.0 0 0.0"/>
       <geometry>
-        <sphere radius="0.001"/>
+        <mesh filename="package://baxter_camera/meshes/head/H1.STL"/>
       </geometry>
     </collision>
     <inertial>
@@ -318,7 +318,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0.1361"/>
       <geometry>
-        <cylinder length="0.2722" radius="0.06"/>
+        <mesh filename="package://baxter_camera/meshes/upper_shoulder/S0.STL"/>
       </geometry>
     </collision>
     <inertial>

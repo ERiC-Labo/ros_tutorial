@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="express_HV6">
+    <xacro:include filename="$(find new_gripper)/urdf/HV6.urdf.xacro"/>
+    <xacro:include filename="$(find new_gripper)/urdf/HV8.urdf.xacro"/>
+    <xacro:include filename="$(find new_gripper)/urdf/HV7.urdf.xacro"/>
+    <xacro:include filename="$(find new_gripper)/urdf/t_pipe.urdf.xacro"/>
+    
+    <link name="base_link">
+    </link>
+    <xacro:HV6 parent="base_link">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    </xacro:HV6>
+    <xacro:HV8 parent="base_link">
+        <origin xyz="-0.1 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    </xacro:HV8>
+    <xacro:HV7 parent="base_link">
+        <origin xyz="0.0 -0.1 0.0" rpy="0.0 0.0 0.0"/>
+    </xacro:HV7>
+    <xacro:t_pipe parent="base_link">
+        <origin xyz="-0.3 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    </xacro:t_pipe>
+    
+</robot>

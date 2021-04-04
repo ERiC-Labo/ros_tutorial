@@ -14,12 +14,12 @@
       <xacro:property name="finger_box_width" value="0.0135" scope="local"/>
       <xacro:property name="finger_box_length" value="0.0615" scope="local"/>
       <collision>
-        <origin rpy="0 0 ${-pi/2*(reflect+1)}" xyz="0 ${finger_width*reflect} ${finger_box_length}"/>
+        <origin rpy="0 0 ${-pi/2*(reflect+1)}" xyz="0 0 0"/>
         <geometry>
-          <box size="${finger_box_height} ${finger_box_width} ${finger_length}"/>
+          <mesh filename="package://baxter_camera/meshes/electric_gripper/fingers/extended_narrow.STL" />
         </geometry>
       </collision>
-      <xacro:property name="knuckle_box_height" value="0.01" scope="local"/>
+      <!--xacro:property name="knuckle_box_height" value="0.01" scope="local"/>
       <xacro:property name="knuckle_box_width" value="0.017" scope="local"/>
       <xacro:property name="knuckle_box_length" value="${finger_width + 0.03275}" scope="local"/>
       <collision>
@@ -27,7 +27,7 @@
         <geometry>
           <box size="${knuckle_box_height} ${knuckle_box_length} ${knuckle_box_width}"/>
         </geometry>
-      </collision>
+      </collision-->
       <inertial>
         <origin rpy="0 0 ${-pi/2*(reflect+1)}" xyz="0 0 0"/>
         <mass value="0.02"/>

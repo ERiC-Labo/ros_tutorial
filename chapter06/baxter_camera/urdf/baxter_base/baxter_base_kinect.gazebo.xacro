@@ -346,6 +346,46 @@
     </plugin>
   </gazebo>
 
+  <gazebo>
+    <plugin name="gazebo_grasp_fix_right" filename="libgazebo_grasp_fix.so">
+      <arm>
+        <arm_name>baxter_right</arm_name>
+        <palm_link>right_wrist</palm_link>
+        <gripper_link>r_gripper_l_finger</gripper_link>
+        <gripper_link>r_gripper_r_finger</gripper_link>
+      </arm>
+      <arm>
+        <arm_name>baxter_left</arm_name>
+        <palm_link>left_wrist</palm_link>
+        <gripper_link>l_gripper_l_finger</gripper_link>
+        <gripper_link>l_gripper_r_finger</gripper_link>
+      </arm>
+      <forces_angle_tolerance>100</forces_angle_tolerance>
+			<update_rate>4</update_rate>
+			<grip_count_threshold>4</grip_count_threshold>
+			<max_grip_count>8</max_grip_count>
+			<release_tolerance>0.02</release_tolerance>
+			<disable_collisions_on_attach>false</disable_collisions_on_attach>
+			<contact_topic>__default_topic__right</contact_topic>
+    </plugin>
+
+    <!--plugin name="gaebo_grasp_fix_left" filename="libgazebo_grasp_fix.so">
+      <arm>
+        <arm_name>baxter_left</arm_name>
+        <palm_link>left_wrist</palm_link>
+        <gripper_link>l_gripper_l_finger</gripper_link>
+        <gripper_link>l_gripper_r_finger</gripper_link>
+      </arm>
+      <forces_angle_tolerance>100</forces_angle_tolerance>
+			<update_rate>4</update_rate>
+			<grip_count_threshold>4</grip_count_threshold>
+			<max_grip_count>8</max_grip_count>
+			<release_tolerance>0.005</release_tolerance>
+			<disable_collisions_on_attach>false</disable_collisions_on_attach>
+			<contact_topic>__default_topic__left</contact_topic>
+    </plugin-->
+  </gazebo>
+
   <!-- Transmissions -->
   <!-- Right Arm -->
   <transmission name="right_tran1">

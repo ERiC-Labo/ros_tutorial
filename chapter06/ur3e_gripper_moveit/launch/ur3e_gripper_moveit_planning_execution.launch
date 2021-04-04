@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+
+    <arg name="sim" default="false"/>
+    <arg name="limited" default="false"/>
+    <arg name="debug" default="false"/>
+    <remap if="$(arg sim)" from="/follow_joint_trajectory" to="/arm_controller/follow_joint_trajectory"/>
+
+    <include file="$(find ur3e_gripper_moveit)/launch/move_group.launch">
+        <arg name="limited" default="$(arg limited)"/>
+        <arg name="debug" default="$(arg debug)"/>
+        <arg name="sim" default="$(arg sim)"/>
+    </include> 
+    
+
+</launch>

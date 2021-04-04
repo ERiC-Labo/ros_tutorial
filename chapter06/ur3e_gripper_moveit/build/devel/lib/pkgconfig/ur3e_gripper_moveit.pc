@@ -1,0 +1,8 @@
+prefix=/home/tsuchida/ros_package/gripper_ws/src/ur3e_gripper_moveit/build/devel
+
+Name: ur3e_gripper_moveit
+Description: Description of ur3e_gripper_moveit
+Version: 0.3.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

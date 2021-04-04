@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<robot name="HV6_v0" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:macro name="HV6" params="*origin parent">
+    <joint name="base_joint" type="fixed">
+      <parent link="${parent}"/>
+      <child link="HV6"/>
+      <xacro:insert_block name="origin"/>
+    </joint>
+    <link name="HV6">
+      <visual>
+        <geometry>
+          <mesh filename="package://new_gripper/meshes/DAE/HV6.dae"/>
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://new_gripper/meshes/STL/HV6.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <!--origin xyz="0 0 0"/-->
+        <mass value="0.05" />
+        <inertia ixx="0.002" ixy="0.0" ixz="0.0"
+                iyy="0.002" iyz="0.0"
+                izz="0.0" />
+      </inertial>
+    </link>
+  </xacro:macro>
+</robot>

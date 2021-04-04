@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="test_robot">
+    
+        <material name="gray">
+            <color rgba="0.5 0.5 0.5 2.0"/>
+        </material>
+        <material name="black">
+            <color rgba="1.0 1.0 1.0 2.0"/>
+        </material>
+        <link name="base_link"/>
+        <joint name="body_joint" type="fixed">
+            <parent link="base_link"/>
+            <child link="body_link"/>
+        </joint>
+        <link name="body_link">
+            <inertial>
+                <!--origin rpy="0 0 0" xyz="1 0 0.04607"/-->
+                <mass value="0.86387"/>
+                <inertia ixx="1017560E-9" ixy="0" ixz="2235E-9" iyy="1028041E-9" iyz="0" izz="489810E-9"/>
+            </inertial>
+            <visual>   
+                <geometry>
+                    <mesh filename="package://new_gripper/meshes/body.dae"/>
+                </geometry>
+                <origin xyz="0.0 0.0 0" rpy="0.0 0.0 0.0"/>
+                <material name="black" />     
+            </visual>
+            <collision>
+                <origin xyz="0.0 0.0 0" rpy="0.0 0.0 0.0"/>
+                <geometry>
+                    <mesh filename="package://new_gripper/meshes/body.dae"/>
+                </geometry>
+            </collision>
+        </link>
+        <gazebo reference="body_link">
+            <material>Gazebo/Black</material>
+            <selfCollide>True</selfCollide>
+        </gazebo>
+        <joint name="finger1_joint" type="prismatic">
+            <parent link="body_link"/>
+            <child link="finger_11_link"/>
+            <axis xyz="0 -1 0"/>
+            <limit effort="130" lower="0" upper="0.03" velocity="0.15"/>
+        </joint>
+        <link name="finger_11_link">
+            <inertial>
+                <!--origin rpy="0 0 0" xyz="0.02262 -0.00759 0.00738"/-->
+                <mass value="0.03804"/>
+                <inertia ixx="13567E-9" ixy="1849E-9" ixz="3622E-9" iyy="15784E-9" iyz="3616E-9" izz="7478E-9"/>
+            </inertial>
+            <visual>
+                <geometry>
+                    <mesh filename="package://new_gripper/meshes/finger_11.dae"/>
+                </geometry>
+                <origin rpy="${pi / 2} 0.0 ${pi}" xyz="0 0.0 0.0"/>
+                <material name="gray" />
+            </visual>
+            <collision>
+                <geometry>
+                    <mesh filename="package://new_gripper/meshes/finger_11.dae"/>
+                </geometry>
+                <origin rpy="${pi / 2} 0.0 ${pi}" xyz="0 0.0 0.0"/>
+            </collision>
+        </link>
+        <gazebo reference="finger_11_link">
+            <material>Gazebo/Grey</material>
+            <selfCollide>True</selfCollide>
+        </gazebo>
+    
+        <joint name="finger2_joint" type="fixed">
+            <parent link="body_link"/>
+            <child link="finger_22_link"/>
+        </joint>
+        <link name="finger_22_link">
+            <inertial>
+                <!--origin rpy="0 0 0" xyz="-0.02262 0.00759 0.00738"/-->
+                <mass value="0.03804"/>
+                <inertia ixx="13567E-9" ixy="1849E-9" ixz="-3622E-9" iyy="15784E-9" iyz="-3616E-9" izz="7478E-9"/>
+            </inertial>
+            <visual>
+                <geometry>
+                    <mesh filename="package://new_gripper/meshes/finger_22.dae"/>
+                </geometry>
+                <origin rpy="${-pi / 2} ${pi} 0.0" xyz="0 0.02 0.0"/>
+                <material name="gray" />
+            </visual>
+            <collision>
+                <geometry>
+                    <mesh filename="package://new_gripper/meshes/finger_22.dae"/>
+                </geometry>
+                <origin rpy="${-pi / 2} ${pi} 0.0"/>
+            </collision>
+        </link>
+        <gazebo reference="finger_22_link">
+            <material>Gazebo/Grey</material>
+            <selfCollide>True</selfCollide>
+        </gazebo>
+    <gazebo>
+        <plugin name="control" filename="libgazebo_ros_control.so">
+            <!--robotNamespace>/test_robot</robotNamespace>
+            <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+            <legacyModeNS>true</legacyModeNS-->
+        </plugin>
+        <!--plugin filename="libroboticsgroup_gazebo_mimic_joint_plugin.so" name="mimic_robotiq_140_4"-->
+        <plugin filename="libroboticsgroup_upatras_gazebo_mimic_joint_plugin.so" name="mimic">
+            <joint>finger1_joint</joint>
+            <mimicJoint>finger2_joint</mimicJoint>
+            <multiplier>1.0</multiplier>
+        </plugin>
+        <!--plugin name="joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
+        <jointName>
+            finger2_joint,
+            finger1_joint
+        </jointName>
+        </plugin-->
+        
+    </gazebo>
+    <transmission name="hardware_trans_1">  
+        <type>trainsmission_interface/SimpleTransmission</type>
+        <joint name="finger1_joint">
+            <hardwareInterface>PositionJointInterface</hardwareInterface>   
+        </joint>     
+        <actuator name="finger1_actuator">
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>  
+    </transmission>
+    <!--transmission name="hardware_trans_2">
+        <type>trainsmission_interface/SimpleTransmission</type>
+        <joint name="finger2_joint">
+            <hardwareInterface>PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="finger2_actuator">
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission-->
+    
+</robot>

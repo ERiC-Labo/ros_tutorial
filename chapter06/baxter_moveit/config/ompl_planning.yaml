@@ -182,7 +182,7 @@ right_arm:
     - SPARS
     - SPARStwo
 both_arms:
-  default_planner_config: None
+  default_planner_config: ""
   planner_configs:
     - AnytimePathShortening
     - SBL
@@ -209,7 +209,7 @@ both_arms:
     - SPARS
     - SPARStwo
 left_hand:
-  default_planner_config: ""
+  default_planner_config: None
   planner_configs:
     - AnytimePathShortening
     - SBL
@@ -236,7 +236,7 @@ left_hand:
     - SPARS
     - SPARStwo
 right_hand:
-  default_planner_config: ""
+  default_planner_config: None
   planner_configs:
     - AnytimePathShortening
     - SBL

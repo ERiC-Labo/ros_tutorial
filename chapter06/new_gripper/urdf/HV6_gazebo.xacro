@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="HV6_gazebo">
+    <xacro:include filename="$(find new_gripper)/urdf/HV6.urdf.xacro"/>
+    <link name="base_link"/>
+    <xacro:HV6 parent="base_link">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    </xacro:HV6>
+     <gazebo reference="HV6">
+      <selfCollide>false</selfCollide>
+    </gazebo>
+    <gazebo>
+        <!--plugin name="ground_truth" filename="libgazebo_ros_p3d.so">
+            <frameName>odom</frameName>
+            <bodyName>base_link</bodyName>
+            <topicName>/tracker_1</topicName>
+            <updateRate>10.0</updateRate>
+        </plugin-->
+    </gazebo>
+</robot>

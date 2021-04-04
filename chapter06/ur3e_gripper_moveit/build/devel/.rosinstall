@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/tsuchida/ros_package/gripper_ws/src/ur3e_gripper_moveit/build/devel/setup.sh

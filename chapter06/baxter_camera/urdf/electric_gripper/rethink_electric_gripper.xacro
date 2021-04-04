@@ -13,7 +13,7 @@
       <collision>
         <origin rpy="${-pi/2} ${pi} 0" xyz="0.0 0.0 0"/>
         <geometry>
-          <cylinder length="0.1" radius="0.029"/>
+          <mesh filename="package://baxter_camera/meshes/electric_gripper/electric_gripper_base.DAE"/>
         </geometry>
         <material name="darkred">
           <color rgba=".5 .1 .1 1"/>
@@ -83,7 +83,7 @@
       <dynamics damping="0.7" friction="0.0"/>
     </joint>
 
-    <transmission name="gripper_${side}1">
+    <!--transmission name="gripper_${side}1">
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="${gripper_side}_gripper_r_finger_joint">
         <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
@@ -92,14 +92,15 @@
         <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         <mechanicalReduction>1</mechanicalReduction>
       </actuator>
-    </transmission>
+    </transmission-->
+    
     <transmission name="gripper_${side}2">
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="${gripper_side}_gripper_l_finger_joint">
         <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       </joint>
       <actuator name="gripper_${gripper_side}1_motor2">
-        <!--hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface-->
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         <mechanicalReduction>1</mechanicalReduction>
       </actuator>
     </transmission>

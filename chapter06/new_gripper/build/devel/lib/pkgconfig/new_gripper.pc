@@ -1,0 +1,8 @@
+prefix=/home/tsuchida/ros_package/gripper_ws/src/new_gripper/build/devel
+
+Name: new_gripper
+Description: Description of new_gripper
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

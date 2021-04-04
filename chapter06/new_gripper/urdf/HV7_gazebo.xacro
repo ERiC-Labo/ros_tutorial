@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="HV7_gazebo">
+    <xacro:include filename="$(find new_gripper)/urdf/HV7.urdf.xacro"/>
+    <link name="base_link"/>
+    <xacro:HV7 parent="base_link">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    </xacro:HV7>
+     <gazebo reference="HV7">
+      <selfCollide>true</selfCollide>
+    </gazebo>
+</robot>

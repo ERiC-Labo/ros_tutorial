@@ -15,7 +15,7 @@
       <collision>
         <origin rpy="0 0 ${pi*(g_reflect+1)/2}" xyz="0 ${-0.0045*g_reflect} -0.015"/>
         <geometry>
-          <cylinder length="0.037" radius="0.008"/>
+          <mesh filename="package://baxter_camera/meshes/electric_gripper/fingers/half_round_tip.DAE" />
         </geometry>
       </collision>
       <inertial>
