@@ -13,7 +13,7 @@
       <collision>
         <origin rpy="${-pi/2} ${pi} 0" xyz="0.0 0.0 0"/>
         <geometry>
-          <mesh filename="package://baxter_camera/meshes/electric_gripper/electric_gripper_base.DAE"/>
+          <mesh filename="package://baxter_camera/meshes/electric_gripper/electric_gripper_base.STL"/>
         </geometry>
         <material name="darkred">
           <color rgba=".5 .1 .1 1"/>
@@ -62,7 +62,7 @@
 
     <!-- Left finger -->
     <xacro:property name="l_finger_offset" value="${((l_finger_slot-1)*0.0095) -0.011}" scope="local"/>
-    <joint name="${gripper_side}_gripper_l_finger_joint" type="prismatic">
+    <joint name="${gripper_side}_gripper_l_finger_joint_1" type="prismatic">
       <origin rpy="0 0 0" xyz="0.0 ${l_finger_offset} 0.02"/>
       <axis xyz="0 1 0"/>
       <parent link="${side}_gripper_base"/>
@@ -73,13 +73,13 @@
 
     <!-- Right finger -->
     <xacro:property name="r_finger_offset" value="${((r_finger_slot-1)*-0.0095) +0.011}" scope="local"/>
-    <joint name="${gripper_side}_gripper_r_finger_joint" type="prismatic">
+    <joint name="${gripper_side}_gripper_r_finger_joint_1" type="prismatic">
       <origin rpy="0 0 0" xyz="0.0 ${r_finger_offset} 0.02"/>
       <axis xyz="0 1 0"/>
       <parent link="${side}_gripper_base"/>
       <child link="${gripper_side}_gripper_r_finger"/>
       <limit effort="20.0" lower="-0.020833" upper="0.0" velocity="0.15"/>
-      <mimic joint="${gripper_side}_gripper_l_finger_joint" multiplier="-1.0"/>
+      <mimic joint="${gripper_side}_gripper_l_finger_joint_1" multiplier="-1.0"/>
       <dynamics damping="0.7" friction="0.0"/>
     </joint>
 
@@ -96,7 +96,7 @@
     
     <transmission name="gripper_${side}2">
       <type>transmission_interface/SimpleTransmission</type>
-      <joint name="${gripper_side}_gripper_l_finger_joint">
+      <joint name="${gripper_side}_gripper_l_finger_joint_1">
         <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       </joint>
       <actuator name="gripper_${gripper_side}1_motor2">
@@ -104,10 +104,10 @@
         <mechanicalReduction>1</mechanicalReduction>
       </actuator>
     </transmission>
-    <gazebo reference="${gripper_side}_gripper_r_finger_joint">
+    <gazebo reference="${gripper_side}_gripper_r_finger_joint_1">
       <implicitSpringDamper>1</implicitSpringDamper>
     </gazebo>
-    <gazebo reference="${gripper_side}_gripper_l_finger_joint">
+    <gazebo reference="${gripper_side}_gripper_l_finger_joint_1">
       <implicitSpringDamper>1</implicitSpringDamper>
     </gazebo>
 

@@ -9,7 +9,7 @@
     </include>
     <node pkg="tf2_ros" type="static_transform_publisher" name="base_to_world" args="0 0 0 0 0 0 1 world base" />
 
-    <node name="gazebo_box" pkg="gazebo_ros" type="spawn_model" respawn="false" args="-urdf -z 0.93 -model baxter -param robot_description
+    <node name="gazebo_box" pkg="gazebo_ros" type="spawn_model" respawn="false" args="-urdf -z 0 -model baxter -param robot_description
     -J baxter::right_s0 -0.272659
     -J baxter::right_s1 1.04701
     -J baxter::right_e0 -0.00123203
@@ -36,7 +36,7 @@
     <rosparam file="$(find baxter_camera)/config/joint_state_controller.yaml" command="load"/>
     <node name="joint_spawner" pkg="controller_manager" type="controller_manager" args="spawn joint_state_controller" respawn="false" output="screen"/>
    
-    <include file="$(find baxter_moveit)/launch/move_group.launch"/>
+    <include file="$(find baxter_moveit_kai)/launch/move_group.launch"/>
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" output="screen"/>
 
 

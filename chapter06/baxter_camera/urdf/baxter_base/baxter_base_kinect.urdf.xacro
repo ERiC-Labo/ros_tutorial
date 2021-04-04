@@ -2,6 +2,7 @@
 <robot name="baxter" xmlns:xacro="http://www.ros.org/wiki/xacro">
   
   <link name="base">
+    
   </link>
   
   <link name="torso">
@@ -156,6 +157,15 @@
       <mass value="0.0001"/>
       <inertia ixx="1e-08" ixy="0" ixz="0" iyy="1e-08" iyz="0" izz="1e-08"/>
     </inertial>
+    <collision>
+      <origin rpy="0.2617993877991494 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.218 0.16 0.001"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </collision>
   </link>
   <link name="head_camera">
     <inertial>
@@ -216,14 +226,14 @@
     </inertial>
   </link>
   <joint name="collision_head_1" type="fixed">
-    <origin rpy="0 0 0" xyz="0.11 0 0.75"/>
-    <parent link="base"/>
+    <origin rpy="0 0 0" xyz="0.11 0 1.68"/>
+    <parent link="pedestal"/>
     <child link="collision_head_link_1"/>
   </joint>
   
   <joint name="collision_head_2" type="fixed">
-    <origin rpy="0 0 0" xyz="0.11 0 0.75"/>
-    <parent link="base"/>
+    <origin rpy="0 0 0" xyz="0.11 0 1.68"/>
+    <parent link="pedestal"/>
     <child link="collision_head_link_2"/>
   </joint>
   <joint name="dummy" type="fixed">
@@ -232,8 +242,8 @@
     <child link="dummyhead1"/>
   </joint>
   <joint name="torso_t0" type="fixed">
-    <origin rpy="0 0 0" xyz="0 0 0"/>
-    <parent link="base"/>
+    <origin rpy="0 0 0" xyz="0 0 0.93"/>
+    <parent link="pedestal"/>
     <child link="torso"/>
     <limit effort="50000" lower="-3.01" upper="3.01" velocity="10000"/>
   </joint>
@@ -520,6 +530,15 @@
       <mass value="0.0001"/>
       <inertia ixx="1e-08" ixy="0" ixz="0" iyy="1e-08" iyz="0" izz="1e-08"/>
     </inertial>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.01" radius="0.02"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 0.8"/>
+      </material>
+    </collision>
   </link>
   <link name="right_hand_camera_axis">
     <inertial>
@@ -543,6 +562,15 @@
       <mass value="0.0001"/>
       <inertia ixx="1e-08" ixy="0" ixz="0" iyy="1e-08" iyz="0" izz="1e-08"/>
     </inertial>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.005 .02 .005"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 0.8"/>
+      </material>
+    </collision>
   </link>
   <link name="right_hand_accelerometer">
     <visual>
@@ -559,6 +587,15 @@
       <mass value="0.0001"/>
       <inertia ixx="1e-08" ixy="0" ixz="0" iyy="1e-08" iyz="0" izz="1e-08"/>
     </inertial>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </collision>
   </link>
   <joint name="right_torso_arm_mount" type="fixed">
     <origin rpy="0 0 -0.7854" xyz="0.024645 -0.219645 0.118588"/>
@@ -888,6 +925,15 @@
       <mass value="0.0001"/>
       <inertia ixx="1e-08" ixy="0" ixz="0" iyy="1e-08" iyz="0" izz="1e-08"/>
     </inertial>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.01" radius="0.02"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 0.8"/>
+      </material>
+    </collision>
   </link>
   <link name="left_hand_camera_axis">
     <inertial>
@@ -911,6 +957,15 @@
       <mass value="0.0001"/>
       <inertia ixx="1e-08" ixy="0" ixz="0" iyy="1e-08" iyz="0" izz="1e-08"/>
     </inertial>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.005 .02 .005"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 0.8"/>
+      </material>
+    </collision>
   </link>
   <link name="left_hand_accelerometer">
     <visual>
@@ -927,6 +982,15 @@
       <mass value="0.0001"/>
       <inertia ixx="1e-08" ixy="0" ixz="0" iyy="1e-08" iyz="0" izz="1e-08"/>
     </inertial>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </collision>
   </link>
   <joint name="left_torso_arm_mount" type="fixed">
     <origin rpy="0 0 0.7854" xyz="0.024645 0.219645 0.118588"/>

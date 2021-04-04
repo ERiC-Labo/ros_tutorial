@@ -9,16 +9,18 @@ right_controller:
     - right_w0
     - right_w1
     - right_w2
-  constraints:
-      goal_time: 0.6
-      stopped_velocity_tolerance: 0.05
-      right_s0: {trajectory: 0.1, goal: 0.5}
-      right_s1: {trajectory: 0.1, goal: 0.5}
-      right_e0: {trajectory: 0.1, goal: 0.5}
-      right_e1: {trajectory: 0.1, goal: 0.5}
-      right_w0: {trajectory: 0.1, goal: 0.5}
-      right_w1: {trajectory: 0.1, goal: 0.5}
-      right_w2: {trajectory: 0.1, goal: 0.5}
+  
+ # constraints:
+ #     goal_time: 0.6
+ #     stopped_velocity_tolerance: 0.05
+ #     right_s0: {trajectory: 0.1, goal: 0.5}
+ #     right_s1: {trajectory: 0.1, goal: 0.5}
+ #     right_e0: {trajectory: 0.1, goal: 0.5}
+ #     right_e1: {trajectory: 0.1, goal: 0.5}
+ #     right_w0: {trajectory: 0.1, goal: 0.5}
+ #     right_w1: {trajectory: 0.1, goal: 0.5}
+ #     right_w2: {trajectory: 0.1, goal: 0.5}
+    
 
 left_controller:
   type: position_controllers/JointTrajectoryController
@@ -31,16 +33,18 @@ left_controller:
     - left_w0
     - left_w1
     - left_w2
-  constraints:
-      goal_time: 0.6
-      stopped_velocity_tolerance: 0.05
-      left_s0: {trajectory: 0.1, goal: 0.1}
-      left_s1: {trajectory: 0.1, goal: 0.1}
-      left_e0: {trajectory: 0.1, goal: 0.1}
-      left_e1: {trajectory: 0.1, goal: 0.1}
-      left_w0: {trajectory: 0.1, goal: 0.1}
-      left_w1: {trajectory: 0.1, goal: 0.1}
-      left_w2: {trajectory: 0.1, goal: 0.1}
+  
+  
+ # constraints:
+ #     goal_time: 0.6
+ #     stopped_velocity_tolerance: 0.05
+ ##     left_s0: {trajectory: 0.1, goal: 0.1}
+  #    left_s1: {trajectory: 0.1, goal: 0.1}
+  #    left_e0: {trajectory: 0.1, goal: 0.1}
+  ##    left_e1: {trajectory: 0.1, goal: 0.1}
+   #   left_w0: {trajectory: 0.1, goal: 0.1}
+   #   left_w1: {trajectory: 0.1, goal: 0.1}
+   #   left_w2: {trajectory: 0.1, goal: 0.1}
 
   
 joint_state_controller:
@@ -49,9 +53,9 @@ joint_state_controller:
   
 right_hand:
   type: "position_controllers/GripperActionController"
-  joint: r_gripper_l_finger_joint
+  joint: r_gripper_l_finger_joint_1
    
 
 left_hand:
   type: "position_controllers/GripperActionController"
-  joint: l_gripper_l_finger_joint
+  joint: l_gripper_l_finger_joint_1

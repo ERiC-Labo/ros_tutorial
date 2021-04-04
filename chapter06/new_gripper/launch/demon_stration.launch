@@ -37,5 +37,7 @@
     <node pkg="image_view" type="image_view" name="image_raw">
         <remap from="image" to="camera/image_raw"/>
     </node>
+    <include file="$(find ur3e_gripper_moveit)/launch/move_group.launch"></include>
+    <node name="rviz" pkg="rviz" type="rviz"  required="true" output="screen"/>
     
 </launch>

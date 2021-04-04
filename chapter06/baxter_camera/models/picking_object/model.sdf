@@ -19,7 +19,7 @@
             <pose>0 0 0.02 0 0 0</pose>
             <geometry>
                 <mesh>
-                    <uri>model://picking_object/material/box_ar.dae</uri>
+                    <uri>model://picking_object/material/box_ar.stl</uri>
                 </mesh>
             </geometry>
         </collision>

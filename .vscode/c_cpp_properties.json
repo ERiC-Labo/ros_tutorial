@@ -9,7 +9,16 @@
                 "${workspaceFolder}/chapter04/pointcloud_usage/include",
                 "/home/tsuchidashinya/ros_package/arm_tutorial/devel/include",
                 "/home/tsuchidashinya/ros_package/arm_tutorial/src/arm_tutorial/chapter05/plugin_first/include/",
-                "/home/tsuchidashinya/ros_package/arm_tutorial/src/arm_tutorial/chapter05/client_yes_plugin/include/"
+                "/home/tsuchidashinya/ros_package/arm_tutorial/src/arm_tutorial/chapter05/client_yes_plugin/include/",
+                "/usr/include/gazebo-11",
+                "/usr/include/ignition/math6",
+                "/usr/include/sdformat-9.5",
+                "/usr/include/ignition/common3",
+                "/usr/include/ignition/fuel_tools4",
+                "/usr/include/ignition/msgs5",
+                "/usr/include/ignition/transport8",
+                "${workspaceFolder}/chapter06/gazebo-pkgs/gazebo_grasp_plugin/include",
+                "${workspaceFolder}/chapter06/gazebo-pkgs/gazebo_version_helpers/include"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",
