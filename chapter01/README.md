@@ -18,7 +18,7 @@ rosdep install --from-paths src --ignore-src -r -y
 catkin build
 
 source ~/ros_package/ur_ws/devel/setup.bash
-roslanch ur_gazebo ur3.launch
+roslaunch ur_gazebo ur3.launch
 ```
 ### Other terminal
 ```
