@@ -43,4 +43,4 @@ git push -u origin main
 ```
 
 ## Go to next tutorial
-[Chapter2](https://github.com/tsuchidashinya/arm_tutorial/tree/main/chapter02)
+[Chapter2](https://github.com/ERiC-Labo/ros_tutorial/tree/main/chapter02)
