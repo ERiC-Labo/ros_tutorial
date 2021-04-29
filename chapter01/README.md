@@ -25,7 +25,7 @@ roslaunch ur_e_gazebo ur3e.launch
 python3 ~/ros_package/ur_ws/src/ros_tutorial/chapter01/python_file/arm_control.py
 ```
 
-## Please register local repository
+## Please register local repository(GitHub)
 ```
 rm -r -f ~/ros_package/ur_ws/src/*
 cd ~/ros_package/ur_ws/src
@@ -41,7 +41,7 @@ cd ~/ros_package/ur_ws/src
 git pull origin main
 ```
 
-## Upload command  is
+## Upload command  is(GitHub)
 ```
 cd ~/ros_package/ur_ws/src
 git add .
