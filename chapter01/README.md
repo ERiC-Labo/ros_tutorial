@@ -1,10 +1,17 @@
 # arm_tutorial
 
+Please execute in ros <font size="3" color="#ff0000">サイズ１で色は赤</font>
+## install catkin 
+```
+sudo apt install python3-catkin-tools
+sudo apt install python3-catkin-pkg
+sudo apt install python3-osrf-pycommon
+```
 ## Please command
 ```
 mkdir -p ~/ros_package/ur_ws/src
 cd ~/ros_package/ur_ws/src
-git clone https://github.com/ericlab/arm_tutorial
+git clone https://github.com/ERiC-Labo/ros_tutorial
 cd ..
 rosdep update
 rosdep install --from-paths src --ignore-src -r -y
