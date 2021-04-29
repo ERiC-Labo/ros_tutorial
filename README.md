@@ -1,21 +1,43 @@
-# chapter04
-## arm_moveit
-```
-roslaunch arm_moveit ur3e_setup.launch
-```
-<div align="center">
-<img src="chapter04/img/image_1.jpg" width="500" height="300">
-</div>
+# arm_tutorial
 
+## Please command
 ```
-rosrun arm_moveit get_joint_information.py
-```
-<div align="center">
-<img src="chapter04/img/image_2.jpg" width="500" height="300">
-</div>
+mkdir -p ~/ros_package/ur_ws/src
+cd ~/ros_package/ur_ws/src
+git clone https://github.com/ericlab/arm_tutorial
+cd ..
+rosdep update
+rosdep install --from-paths src --ignore-src -r -y
+catkin build
 
+source ~/ros_package/ur_ws/devel/setup.bash
+roslanch ur_gazebo ur3.launch
 ```
-rosrun arm_moveit keybord_move.py
+### Other terminal
 ```
-<div align="center">
-<img src="chapter04/img/output.gif" width="900" height="300">
+python ~/ros_package/ur_ws/src/arm_tutorial/python_file/arm_control.py
+```
+
+## Please register local repository
+```
+rm -r -f ~/ros_package/ur_ws/src/*
+cd ~/ros_package/ur_ws/src
+git init
+git remote add origin https://github.com/ericlab/arm_tutorial
+git pull origin main
+git branch -M main
+catkin build
+```
+## Download command is
+```
+cd ~/ros_package/ur_ws/src
+git pull origin main
+```
+
+## Upload command  is
+```
+cd ~/ros_package/ur_ws/src
+git add .
+git commit -m "(Your favorite name)"
+git push -u origin main
+```
