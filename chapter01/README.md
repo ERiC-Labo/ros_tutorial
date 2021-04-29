@@ -1,6 +1,6 @@
 # arm_tutorial
 
-Please execute in ros <font size="3" color="#ff0000">サイズ１で色は赤</font>
+Please execute in ros <em>サイズ１で色は赤</em>
 ## install catkin 
 ```
 sudo apt install python3-catkin-tools
