@@ -48,9 +48,14 @@ rosrun basic_pub_and_sub get_image_and_save.py
 ```
 roslanch basic_rviz express_urdf.launch
 ```
-<img src="img/image_1.png">
+<img src="https://github.com/tsuchidashinya/arm_tutorial/blob/main/chapter03/img/image_1.png">
 
 ```
 roslanch basic_rviz express_xacro.launch
 ```
-<img src="img/image_2.png">
+<img src="https://github.com/tsuchidashinya/arm_tutorial/blob/main/chapter03/img/image_2.png">
+
+# basic gazebo
+
+# Next tutorial
+<a href="https://github.com/tsuchidashinya/arm_tutorial/tree/main/chapter04">Chapter04</a>
