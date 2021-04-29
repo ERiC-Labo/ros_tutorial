@@ -21,6 +21,9 @@ roscore
 rosrun basic_pub_and_sub class_publisher.py
 ```
 ```
+roslaunch basic_pub_and_sub image_view.launch
+```
+```
 rosrun basic_pub_and_sub class_subscriber.py
 ```
 You can show TwistStamp message and please look basic_pub_and_sub/file/twiststamp.txt
@@ -42,12 +45,12 @@ rosrun basic_pub_and_sub get_image_and_save.py
 
 ## basic rviz
 ```
-roslanch basic_rviz express_urdf.launch
+roslaunch basic_rviz express_urdf.launch
 ```
 <img src="https://github.com/ERiC-Labo/ros_tutorial/blob/main/file/img/chapter03/image_1.png">
 
 ```
-roslanch basic_rviz express_xacro.launch
+roslaunch basic_rviz express_xacro.launch
 ```
 <img src="https://github.com/ERiC-Labo/ros_tutorial/blob/main/file/img/chapter03/image_2.png">
 
