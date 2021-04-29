@@ -24,7 +24,7 @@ roslanch ur3_moveit_config ur3_moveit_planning_execution.launch sim:=true
 roslaunch ur3_moveit_config moveit_rviz.launch config:=true
 ```
 
-<img src="https://github.com/tsuchidashinya/arm_tutorial/blob/main/chapter02/img/output_1.gif">
+<img src="https://github.com/tsuchidashinya/arm_tutorial/blob/main/file/img/chapter02/output_1.gif>
 
 ## Next page
 <a href="https://github.com/tsuchidashinya/arm_tutorial/tree/main/chapter03">Chapter03</a>
