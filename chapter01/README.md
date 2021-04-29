@@ -18,11 +18,11 @@ rosdep install --from-paths src --ignore-src -r -y
 catkin build
 
 source ~/ros_package/ur_ws/devel/setup.bash
-roslaunch ur_gazebo ur3.launch
+roslaunch ur_e_gazebo ur3e.launch
 ```
 ### Other terminal
 ```
-python ~/ros_package/ur_ws/src/arm_tutorial/python_file/arm_control.py
+python3 ~/ros_package/ur_ws/src/ros_tutorial/chapter01/python_file/arm_control.py
 ```
 
 ## Please register local repository
@@ -30,7 +30,7 @@ python ~/ros_package/ur_ws/src/arm_tutorial/python_file/arm_control.py
 rm -r -f ~/ros_package/ur_ws/src/*
 cd ~/ros_package/ur_ws/src
 git init
-git remote add origin https://github.com/ericlab/arm_tutorial
+git remote add origin https://github.com/ERiC-Labo/ros_tutorial
 git pull origin main
 git branch -M main
 catkin build

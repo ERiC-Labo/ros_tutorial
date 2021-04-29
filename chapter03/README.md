@@ -1,10 +1,6 @@
 # chapter03
 ## basic_pub_and_sub
-### Initially
-```
-echo "source (your ros workspace folder)/devel/setup.bash" >> ~/.bashrc
-source ~/.bashrc
-```
+
 ### simple_pub simple_sub
 ```
 roscore
